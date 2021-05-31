@@ -123,18 +123,18 @@
                         v-model="selectedItem"
                         color="primary"
                 >
-                    <v-list-item
-                            v-for="(item, i) in items"
-                            :key="i"
-                    >
-                        <v-list-item-icon>
-                            <v-icon v-text="item.icon"></v-icon>
-                        </v-list-item-icon>
+                    <router-link v-for="(item, i) in items"
+                                 :key="i" :to="item.link">
+                        <v-list-item>
+                            <v-list-item-icon>
+                                <v-icon v-text="item.icon"></v-icon>
+                            </v-list-item-icon>
 
-                        <v-list-item-content>
-                            <v-list-item-title v-text="item.text"></v-list-item-title>
-                        </v-list-item-content>
-                    </v-list-item>
+                            <v-list-item-content>
+                                <v-list-item-title v-text="item.text"></v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </router-link>
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer>
@@ -150,13 +150,13 @@
             hints: true,
             selectedItem: 0,
             items: [
-                { text: 'My Files', icon: 'mdi-folder' },
-                { text: 'Shared with me', icon: 'mdi-account-multiple' },
-                { text: 'Starred', icon: 'mdi-star' },
-                { text: 'Recent', icon: 'mdi-history' },
-                { text: 'Offline', icon: 'mdi-check-circle' },
-                { text: 'Uploads', icon: 'mdi-upload' },
-                { text: 'Backups', icon: 'mdi-cloud-upload' },
+                { text: 'New Project', icon: 'mdi-history', link: 'project/create' },
+                { text: 'My Projects', icon: 'mdi-folder' , link: '/projects'},
+                { text: 'Profile', icon: 'mdi-account-multiple', link: '/profile'},
+                { text: 'Billing', icon: 'mdi-check-circle', link: '/billing' },
+                { text: 'Uploads', icon: 'mdi-upload', link: '/uploads' },
+                { text: 'Support', icon: 'mdi-cloud-upload', link: '/support'},
+                { text: 'Toolkit', icon: '', link: '/toolkit'}
             ],
         }),
         components: {}

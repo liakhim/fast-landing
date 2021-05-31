@@ -24,6 +24,9 @@
   * {
     text-align: left;
   }
+  a {
+    text-decoration: none;
+  }
   ul {
     li {
       list-style-type: none;
