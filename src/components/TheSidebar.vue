@@ -19,7 +19,6 @@
                         </v-list-item-title>
                         <v-list-item-subtitle>john@vuetifyjs.com</v-list-item-subtitle>
                     </v-list-item-content>
-                    <!--*****-->
                     <v-menu
                             v-model="menu"
                             :close-on-content-click="false"
@@ -106,7 +105,6 @@
                             </v-card-actions>
                         </v-card>
                     </v-menu>
-                    <!--*****-->
                     <Account>
                         <template #dropdown>
                             <v-list-item-action>
